@@ -9,5 +9,7 @@
 FROM postgis/postgis
 
 # Install some additional packages that we need.
+
 RUN apt-get update
+RUN apt-get install -y procps && rm -rf /var/lib/apt/lists/*
 RUN apt-get install gdal-bin -y
