@@ -1,5 +1,6 @@
 # docker-compose build
 # configured for CSE3DMS - Database Management System
+# PostGIS server
 # La Trobe University
 # Created by Kiki Adhinugraha
 
@@ -27,8 +28,7 @@ services:
       - "80:80"
     restart: on-failure
     volumes:
-      - "postgisdb:/var/lib/postgresql/data"
+      #Replace the C:/Users/kadhinugraha/OneDrive/database/postgis/cse3dms with folder in your La Trobe Onedrive
+      - "C:/Users/kadhinugraha/OneDrive/database/postgis/cse3dms:/var/lib/postgresql/data"
+      #Replace the C:/dataset/vector with your own directory that contains vector file and external data
       - "C:/dataset/vector:/home"
-volumes:
-  postgisdb:
-    external: false
